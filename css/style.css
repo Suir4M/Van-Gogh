@@ -79,7 +79,7 @@ body {
 }
 
 .sky-decoration {
-  background: url('img/nuit-etoile.jpg') center / cover no-repeat;
+  background: url('../img/nuit-etoile.jpg') center / cover no-repeat;
 }
 
 .hero-copy {
