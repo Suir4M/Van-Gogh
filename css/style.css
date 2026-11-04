@@ -191,7 +191,6 @@ h1 {
 .star-link:hover,
 .star-link:focus-visible {
   color: var(--gold);
-  transform: translateY(-4px);
   outline: none;
 }
 
@@ -244,11 +243,11 @@ h1 {
       place-items: center;
       padding: 120px 24px 60px;
       text-align: center;
-    }
-    .placeholder-content { max-width: 560px; }
-    .placeholder-content h1 { font-size: clamp(42px, 7vw, 76px); }
-    .placeholder-content p { color: var(--muted); line-height: 1.8; }
-    .back-link {
+}
+.placeholder-content { max-width: 560px; }
+.placeholder-content h1 { font-size: clamp(42px, 7vw, 76px); }
+.placeholder-content p { color: var(--muted); line-height: 1.8; }
+.back-link {
       display: inline-block;
       margin-top: 28px;
       color: var(--gold);
