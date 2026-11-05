@@ -78,10 +78,6 @@ body {
   align-items: center;
 }
 
-.sky-decoration {
-  background: url('../img/nuit-etoile.jpg') center / cover no-repeat;
-}
-
 .hero-copy {
   position: relative;
   z-index: 3;
@@ -127,32 +123,46 @@ h1 {
   background: var(--gold);
 }
 
-.sky-decoration {
+
+.constellation {
   position: absolute;
   z-index: 2;
-  top: 17%;
-  right: 5%;
-  width: 48%;
-  min-height: 66%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(70px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  place-items: center;
-  gap: clamp(18px, 3vw, 42px);
-  padding: 28px;
+  width: min(58vw, 91svh);
+  aspect-ratio: 1771 / 1403;
+  right: clamp(20px, 3.5vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: url('../img/nuit-etoile.jpg') center / 100% 100% no-repeat;
+}
+
+
+.sky-decoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .star-link {
-  min-width: 78px;
-  min-height: 78px;
+  position: absolute;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 13px;
+
+  transform: translate(-50%, -50%);
+
+  min-width: 78px;
+  min-height: 78px;
+
   color: var(--muted);
   text-decoration: none;
   border-radius: 50%;
+
   transition: transform .2s ease, color .2s ease;
 }
 
@@ -216,26 +226,6 @@ h1 {
 .footer-star { color: var(--gold); }
 .hero-footer span:last-child { margin-left: auto; }
 
-@media (max-width: 760px) {
-  .site-header { height: 68px; padding: 0 6vw; }
-  .header-note { display: none; }
-  .hero { min-height: 1050px; align-items: flex-start; }
-  .hero-copy { width: auto; margin: 125px 8vw 0; }
-  h1 { font-size: 56px; }
-  .intro { max-width: 320px; }
-  .sky-decoration {
-    top: 52%;
-    left: 6%;
-    right: 6%;
-    width: 88%;
-    min-height: 390px;
-    padding: 10px;
-    gap: 12px;
-  }
-  .star-link { min-width: 65px; min-height: 75px; gap: 10px; }
-  .star-label { font-size: 7px; }
-  .hero-footer { bottom: 22px; font-size: 8px; }
-}
 
 .placeholder-page {
       min-height: 100svh;
@@ -258,3 +248,55 @@ h1 {
       border-bottom: 1px solid #f5c96866;
       padding-bottom: 8px;
     }
+
+
+@media (max-width: 760px) {
+
+  .hero {
+    min-height: 1050px;
+    align-items: flex-start;
+  }
+
+  .constellation {
+    width: min(100vw, 126.23svh);
+
+    right: auto;
+    left: 50%;
+
+    top: auto;
+    bottom: 80px;
+
+    transform: translateX(-50%);
+  }
+
+  .star-link {
+    min-width: 65px;
+    min-height: 65px;
+    gap: 10px;
+  }
+
+  .star-label {
+    font-size: 7px;
+  }
+
+  .hero-footer {
+    bottom: 22px;
+    font-size: 8px;
+  }
+
+}
+
+
+/* Position des 9 étoiles */
+
+.star-01 { left: 9.6%; top: 6.6%; }
+.star-02 { left: 22.3%; top: 5.2%; }
+.star-03 { left: 34.3%; top: 6%; }
+
+.star-04 { left: 40.9%; top: 8.6%; }
+.star-05 { left: 65%; top: 48%; }
+.star-06 { left: 85%; top: 60%; }
+
+.star-07 { left: 20%; top: 75%; }
+.star-08 { left: 50%; top: 80%; }
+.star-09 { left: 225%; top: 85%; }
