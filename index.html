@@ -3,85 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Une constellation inspirée des œuvres de Vincent van Gogh.">
-  <title>Van Gogh — Une constellation</title>
+  <meta name="theme-color" content="#07142e">
+  <meta name="description" content="Explorez l'univers de Vincent van Gogh, une étoile à la fois.">
+  <title>Vincent van Gogh · Une constellation</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307142e'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23ffe2a0'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#constellation" data-i18n="skip">Aller à la constellation</a>
+
   <header class="site-header">
-    <a class="wordmark" href="#home"><span class="wordmark-dot"></span> VAN GOGH</a>
-    <p class="header-note">UNE CONSTELLATION</p>
-    <div class="language-switch" aria-label="Choix de la langue">
-      <span class="active">FR</span><span class="separator">/</span><span>EN</span>
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-dot" aria-hidden="true"></span>
+      <span data-i18n="brandName">Vincent van Gogh</span>
+    </a>
+    <p class="header-note" aria-hidden="true">
+      <span class="header-note-mark">✳</span>
+      <span data-i18n="navLabel">Une expérience immersive</span>
+    </p>
+    <div class="language-switch" role="group" aria-label="Langue" data-i18n-attr="aria-label:language">
+      <button type="button" lang="fr" data-lang="fr" aria-pressed="true">FR</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" lang="en" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">UN VOYAGE À TRAVERS LES ŒUVRES</p>
-        <h1>Une<br>constellation</h1>
-        <p class="intro">Neuf étoiles. Neuf œuvres. Une vie racontée à travers la lumière, la couleur et le mouvement.</p>
-        <p class="explore"><span class="explore-line"></span> DÉCOUVRIR L’UNIVERS DE VAN GOGH</p>
-      </div>
+  <main class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="eyebrow">1853 — 1890 · Une vie en couleurs</p>
+      <h1 data-i18n="brandName">Vincent van Gogh</h1>
+      <p class="intro" data-i18n="intro">Entrez dans le ciel intérieur d’un artiste qui cherchait la lumière jusque dans la nuit.</p>
+      <p class="explore"><span class="explore-line" aria-hidden="true"></span><span data-i18n="explore">Choisissez une étoile pour commencer</span></p>
+    </div>
 
-      <div class="constellation">
-        <nav class="sky-decoration" aria-label="Choisir une œuvre">
+    <div class="painting" id="constellation">
+      <img
+        src="img/nuit-etoile-1771.webp"
+        srcset="img/nuit-etoile-960.webp 960w, img/nuit-etoile-1771.webp 1771w"
+        sizes="(max-width: 700px) 100vw, 58vw"
+        width="1771" height="1403" fetchpriority="high"
+        alt="La Nuit étoilée de Vincent van Gogh" data-i18n-attr="alt:paintingAlt">
 
-          <a class="star-link star-01" href="pages/oeuvre-01.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 01</span>
-          </a>
+      <!-- Position de chaque étoile : --x et --y, en % de l'image. -->
+      <nav class="stars" aria-label="Choisir une œuvre" data-i18n-attr="aria-label:constellationLabel">
+        <a class="star star--right" href="pages/oeuvre-01.html" style="--x:9.8%; --y:4.4%"
+           aria-label="Découvrir l’œuvre Les Mangeurs de pommes de terre de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.potatoEaters">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.potatoEaters">Les Mangeurs de pommes de terre</span>
+        </a>
+        <a class="star star--right" href="pages/oeuvre-02.html" style="--x:22.43%; --y:3.2%"
+           aria-label="Découvrir l’œuvre Autoportrait au chapeau de feutre gris de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.selfPortrait">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.selfPortrait">Autoportrait au chapeau de feutre gris</span>
+        </a>
+        <a class="star star--right" href="pages/oeuvre-03.html" style="--x:34.2%; --y:3.5%"
+           aria-label="Découvrir l’œuvre Les Tournesols de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.sunflowers">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.sunflowers">Les Tournesols</span>
+        </a>
+        <a class="star star--left" href="pages/oeuvre-04.html" style="--x:41%; --y:6.3%"
+           aria-label="Découvrir l’œuvre La Chambre à coucher de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.bedroom">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.bedroom">La Chambre à coucher</span>
+        </a>
+        <a class="star star--above" href="pages/oeuvre-05.html" style="--x:61.5%; --y:8%"
+           aria-label="Découvrir l’œuvre La Vigne rouge de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.redVigne">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.redVigne">La Vigne rouge</span>
+        </a>
+        <a class="star star--left" href="pages/oeuvre-06.html" style="--x:71%; --y:23%"
+           aria-label="Découvrir l’œuvre Les Iris de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.irises">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.irises">Les Iris</span>
+        </a>
+        <a class="star star--right" href="pages/oeuvre-07.html" style="--x:23%; --y:17.4%"
+           aria-label="Découvrir l’œuvre Terrasse du café le soir de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.cafeTerrace">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.cafeTerrace">Terrasse du café le soir</span>
+        </a>
+        <a class="star star--left" href="pages/oeuvre-08.html" style="--x:32.2%; --y:32.5%"
+           aria-label="Découvrir l’œuvre Branche d’amandier en fleurs de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.almondBlossom">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.almondBlossom">Branche d’amandier en fleurs</span>
+        </a>
+        <a class="star star--left" href="pages/oeuvre-09.html" style="--x:35.4%; --y:53.7%"
+           aria-label="Découvrir l’œuvre Champ de blé aux corbeaux de Vincent van Gogh" data-i18n-attr="aria-label:starA11y.wheatfield">
+          <span class="star-hit" aria-hidden="true"><span class="star-halo"></span><span class="star-core"></span><span class="star-ray"></span></span>
+          <span class="star-label" aria-hidden="true" data-i18n="stars.wheatfield">Champ de blé aux corbeaux</span>
+        </a>
+      </nav>
+    </div>
 
-          <a class="star-link star-02" href="pages/oeuvre-02.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 02</span>
-          </a>
-
-          <a class="star-link star-03" href="pages/oeuvre-03.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 03</span>
-          </a>
-
-          <a class="star-link star-04" href="pages/oeuvre-04.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 04</span>
-          </a>
-
-          <a class="star-link star-05" href="pages/oeuvre-05.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 05</span>
-          </a>
-
-          <a class="star-link star-06" href="pages/oeuvre-06.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 06</span>
-          </a>
-
-          <a class="star-link star-07" href="pages/oeuvre-07.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 07</span>
-          </a>
-
-          <a class="star-link star-08" href="pages/oeuvre-08.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 08</span>
-          </a>
-
-          <a class="star-link star-09" href="pages/oeuvre-09.html">
-            <span class="star"></span>
-            <span class="star-label">ŒUVRE 09</span>
-          </a>
-
-        </nav>
-      </div>
-
-      <div class="hero-footer">
-        <span>UN HOMMAGE À VINCENT VAN GOGH</span>
-        <span class="footer-star">✳</span>
-        <span>01 — 09</span>
-      </div>
-    </section>
+    <p class="hero-footer"><span data-i18n="footer">Une vie, neuf portes</span> <span class="hero-footer-mark" aria-hidden="true">✳</span> <span aria-hidden="true">09 / 09</span></p>
   </main>
+
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
